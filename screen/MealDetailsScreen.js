@@ -3,19 +3,33 @@ import { MEALS } from "../data/dummy-data";
 import AboutMeal from "../components/AboutMeal";
 import Subtitle from "../components/MealDetail/Subtitle";
 import List from "../components/MealDetail/List";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect ,useContext } from "react";
 import IconButton from "../components/IconButton";
+import { FavoritesContext } from "../store/context/favorites-context";
 
 
 // route props gives access to params that were set for this route
 function MealDetailsScreen({ route , navigation }) {
+  const favoriteMealsCtx =useContext(FavoritesContext)
+
+
+
   const mealId = route.params.mealId;
 
   const selectedMeal = MEALS.find((meal) => mealId === meal.id);
 
 
-  function headerButtonPressHandler(){
-    console.log('hello ')
+  const mealIsFavorite =favoriteMealsCtx.ids.includes(mealId)
+
+
+  function changeFavoriteStatusHandler(){
+    if (mealIsFavorite){
+      favoriteMealsCtx.removeFavorite(mealId)
+    }
+    else {
+      favoriteMealsCtx.addFavorite(mealId)
+    }
+  
   }
 
 
@@ -23,11 +37,11 @@ function MealDetailsScreen({ route , navigation }) {
   useLayoutEffect(()=>{
     navigation.setOptions({
         headerRight: ()=>{
-            return <IconButton onPress={headerButtonPressHandler} icon="heart" color="#fcd5ce"/>
+            return <IconButton onPress={changeFavoriteStatusHandler} icon={mealIsFavorite ?"heart" : "heart-outline"} color="#fcd5ce"/>
         }
     })
 
-  }, [headerButtonPressHandler ,navigation])
+  }, [changeFavoriteStatusHandler ,navigation])
 
   return (
     

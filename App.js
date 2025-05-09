@@ -9,6 +9,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer'
 import FavoriteScreen from "./screen/FavoriteScreen";
 import IconButton from "./components/IconButton";
 import {Ionicons} from '@expo/vector-icons'
+import FavoritesContextProvider from "./store/context/favorites-context";
 
 // object with two properties , each holds a object that acts as component
 const Stack = createNativeStackNavigator();
@@ -52,6 +53,7 @@ function DrawerNavigator(){
 export default function App() {
   return (
     <ImageBackground style={styles.container} resizeMode='cover' source={require("./assets/images/RecipeBookCover.png")}>
+      <FavoritesContextProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
           headerTintColor:"#d0dfd6"   ,
@@ -71,6 +73,7 @@ export default function App() {
           }} />
         </Stack.Navigator>
       </NavigationContainer>
+      </FavoritesContextProvider>
     </ImageBackground>
   );
 }

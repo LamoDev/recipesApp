@@ -7,9 +7,9 @@ import {
   Platform,
 } from "react-native";
 
-import ContainerShadow  from "../components/ContainerShadow";
+import ContainerShadow  from "../../components/ContainerShadow";
 import { useNavigation } from "@react-navigation/native";
-import AboutMeal from "./AboutMeal";
+import AboutMeal from "../AboutMeal";
 
 
 function MealItem({ id , title, imgUrl, duration, complexity, affordability }) {
