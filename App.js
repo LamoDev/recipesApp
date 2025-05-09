@@ -9,7 +9,11 @@ import {createDrawerNavigator} from '@react-navigation/drawer'
 import FavoriteScreen from "./screen/FavoriteScreen";
 import IconButton from "./components/IconButton";
 import {Ionicons} from '@expo/vector-icons'
-import FavoritesContextProvider from "./store/context/favorites-context";
+// import FavoritesContextProvider from "./store/context/favorites-context";
+import { Provider } from "react-redux";
+import { store } from './store/redux/store'
+
+
 
 // object with two properties , each holds a object that acts as component
 const Stack = createNativeStackNavigator();
@@ -52,15 +56,16 @@ function DrawerNavigator(){
 
 export default function App() {
   return (
-    <ImageBackground style={styles.container} resizeMode='cover' source={require("./assets/images/RecipeBookCover.png")}>
-      <FavoritesContextProvider>
+    // <ImageBackground style={styles.container} resizeMode='cover' source={require("./assets/images/RecipeBookCover.png")}>
+      // <FavoritesContextProvider> 
+    <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
           headerTintColor:"#d0dfd6"   ,
            headerStyle:{ 
             backgroundColor: "#556e58",   
         }}}>
-          <Stack.Screen  name="Drawer" component={DrawerNavigator} 
+          <Stack.Screen  name="Back" component={DrawerNavigator} 
            options={{
             headerShown:false
            }}/>
@@ -73,8 +78,9 @@ export default function App() {
           }} />
         </Stack.Navigator>
       </NavigationContainer>
-      </FavoritesContextProvider>
-    </ImageBackground>
+      </Provider>
+      // </FavoritesContextProvider> 
+    // </ImageBackground> */}
   );
 }
 
