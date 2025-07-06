@@ -15,16 +15,16 @@ A beginner-friendly mobile app built with **React Native** and **Expo** that let
 ## 📸 Screenshots
 
 ### 🏠 Home Screen
-![Home Screen](./assets/screenshots/home.png)
+<img src="./assets/screenshots/home.png" width="300" alt="Home Screen" />
 
-### 🍽️ Meal categories Screen
-![Details Screen](./assets/screenshots/catgory.png)
+### 🍽️ Meal Categories Screen
+<img src="./assets/screenshots/catgory.png" width="300" alt="Meal Categories Screen" />
 
 ### 📋 Meal Details Screen
-![Details Screen](./assets/screenshots/details.png)
+<img src="./assets/screenshots/details.png" width="300" alt="Meal Details Screen" />
 
 ### 🩷 Favorites Meals Screen
-![Details Screen](./assets/screenshots/fav.png)
+<img src="./assets/screenshots/fav.png" width="300" alt="Favorites Meals Screen" />
 
 
 
