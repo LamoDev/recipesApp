@@ -30,8 +30,6 @@ function MealsList({items}){
       );
     }
 
-
-
 export default MealsList;
 
 const styles = StyleSheet.create({

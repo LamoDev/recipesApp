@@ -78,7 +78,7 @@ function MealDetailsScreen({ route, navigation }) {
           <View style={styles.listContainer}>
             <Subtitle>Ingredients :</Subtitle>
             <List data={selectedMeal.ingredients} />
-            <Subtitle>Ingredients :</Subtitle>
+            <Subtitle> Steps :</Subtitle>
             <List data={selectedMeal.steps} />
           </View>
         </View>
