@@ -31,13 +31,5 @@ A beginner-friendly mobile app built with **React Native** and **Expo** that let
 
 ---
 
-## 🛠️ Tech Stack
-
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- JavaScript (ES6+)
-- Static local data (`meals.js`)
-
----
 
 
